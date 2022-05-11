@@ -21,11 +21,14 @@ export default function ButtonRegister(props) {
       password: data.pass,
     };
 
-    const response = await fetch(`http://localhost:4000/auth/local/register`, {
-      method: "POST",
-      body: JSON.stringify(dataPOST),
-      headers: { "Content-Type": "application/json" },
-    });
+    const response = await fetch(
+      `${process.env.URL_BACK}/auth/local/register`,
+      {
+        method: "POST",
+        body: JSON.stringify(dataPOST),
+        headers: { "Content-Type": "application/json" },
+      }
+    );
     const resp = await response.json();
     if (resp.status === "success") {
       setVisible(false);

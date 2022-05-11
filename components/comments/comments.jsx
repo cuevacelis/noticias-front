@@ -42,14 +42,17 @@ export default function Comments(props) {
       id_Comment: Number(commentSelected.id_Comment),
     };
 
-    await fetch("http://localhost:4000/api/dataNotices/delete-notice-comment", {
-      method: "POST",
-      body: JSON.stringify(dataPOST),
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: getTokenUser,
-      },
-    });
+    await fetch(
+      `${process.env.URL_BACK}/api/dataNotices/delete-notice-comment`,
+      {
+        method: "POST",
+        body: JSON.stringify(dataPOST),
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: getTokenUser,
+        },
+      }
+    );
     getDataComments();
     setLoadingComments(false);
   };
@@ -60,7 +63,7 @@ export default function Comments(props) {
     };
 
     const response = await fetch(
-      `http://localhost:4000/api/dataNotices/notice-comments`,
+      `${process.env.URL_BACK}/api/dataNotices/notice-comments`,
       {
         method: "POST",
         body: JSON.stringify(dataPOST),
@@ -116,7 +119,7 @@ export default function Comments(props) {
 
       if (editState == true) {
         const response = await fetch(
-          `http://localhost:4000/api/dataNotices/edit-notice-comment`,
+          `${process.env.URL_BACK}/api/dataNotices/edit-notice-comment`,
           {
             method: "POST",
             body: JSON.stringify(dataPost_edit),
@@ -129,7 +132,7 @@ export default function Comments(props) {
         const resp = await response.json();
       } else {
         const response = await fetch(
-          `http://localhost:4000/api/dataNotices/insert-notice-comments`,
+          `${process.env.URL_BACK}/api/dataNotices/insert-notice-comments`,
           {
             method: "POST",
             body: JSON.stringify(dataPOST),

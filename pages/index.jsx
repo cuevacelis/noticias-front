@@ -3,7 +3,7 @@ import CardNotice from "@/components/CardNotice";
 import Layout from "@/components/layout/layout.jsx";
 
 export async function getStaticProps() {
-  const res = await fetch("http://localhost:4000/api/dataNotices/main-data");
+  const res = await fetch(`${process.env.URL_BACK}/api/dataNotices/main-data`);
   const resJson = await res.json();
   const noticias_principales = resJson.data;
 

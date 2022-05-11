@@ -13,11 +13,14 @@ export async function getStaticProps({ params }) {
   const dataPOST = {
     path: params.path,
   };
-  const res = await fetch(`http://localhost:4000/api/dataNotices/notice-path`, {
-    method: "POST",
-    body: JSON.stringify(dataPOST),
-    headers: { "Content-Type": "application/json" },
-  });
+  const res = await fetch(
+    `${process.env.URL_BACK}/api/dataNotices/notice-path`,
+    {
+      method: "POST",
+      body: JSON.stringify(dataPOST),
+      headers: { "Content-Type": "application/json" },
+    }
+  );
   const resJson = await res.json();
   const notice_obj = resJson.data[0];
 
