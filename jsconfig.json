@@ -1,0 +1,13 @@
+{
+    "compilerOptions": {
+        "baseUrl": ".",
+        "paths": {
+        "@/components/*": ["components/*"],
+        "@/resources/*": ["resources/*"] , 
+        "@/elements/*": ["elements/*"]
+        },
+        "jsx": "react-jsx",
+        "checkJs": true
+    },
+    "exclude": ["node_modules","out","public"]
+}
