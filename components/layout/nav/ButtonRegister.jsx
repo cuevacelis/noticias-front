@@ -22,7 +22,7 @@ export default function ButtonRegister(props) {
     };
 
     const response = await fetch(
-      `${process.env.URL_BACK}/auth/local/register`,
+      `${process.env.NEXT_PUBLIC_URL_BACK}/auth/local/register`,
       {
         method: "POST",
         body: JSON.stringify(dataPOST),

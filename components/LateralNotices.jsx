@@ -7,7 +7,7 @@ function LateralNotices() {
 
   async function getDataLateralNotice() {
     const response = await fetch(
-      `${process.env.URL_BACK}/api/dataNotices/main-data`,
+      `${process.env.NEXT_PUBLIC_URL_BACK}/api/dataNotices/main-data`,
       { method: "GET" }
     );
     const responsejson = await response.json();

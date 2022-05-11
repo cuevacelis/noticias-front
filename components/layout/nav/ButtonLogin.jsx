@@ -23,11 +23,14 @@ export default function ButtonLogin(props) {
       email: data.email,
       password: data.pass,
     };
-    const response = await fetch(`${process.env.URL_BACK}/auth/local/login`, {
-      method: "POST",
-      body: JSON.stringify(dataPOST),
-      headers: { "Content-Type": "application/json" },
-    });
+    const response = await fetch(
+      `${process.env.NEXT_PUBLIC_URL_BACK}/auth/local/login`,
+      {
+        method: "POST",
+        body: JSON.stringify(dataPOST),
+        headers: { "Content-Type": "application/json" },
+      }
+    );
     const resp = await response.json();
     if (resp.status === "success") {
       console.log("Se logro un login exitoso", resp);

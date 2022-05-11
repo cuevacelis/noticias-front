@@ -14,7 +14,7 @@ export async function getStaticProps({ params }) {
     path: params.path,
   };
   const res = await fetch(
-    `${process.env.URL_BACK}/api/dataNotices/notice-path`,
+    `${process.env.NEXT_PUBLIC_URL_BACK}/api/dataNotices/notice-path`,
     {
       method: "POST",
       body: JSON.stringify(dataPOST),
