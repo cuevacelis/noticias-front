@@ -24,7 +24,7 @@ export default function ButtonLogin(props) {
       password: data.pass,
     };
     const response = await fetch(
-      `${process.env.NEXT_PUBLIC_URL_BACK}/auth/local/login`,
+      `${process.env.NEXT_PUBLIC_URL_BACK}/api/auth/local/login`,
       {
         method: "POST",
         body: JSON.stringify(dataPOST),
